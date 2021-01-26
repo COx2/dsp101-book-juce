@@ -12,18 +12,20 @@ juce_add_plugin("${BaseTargetName}"
         NEEDS_MIDI_OUTPUT FALSE
         IS_MIDI_EFFECT FALSE
         EDITOR_WANTS_KEYBOARD_FOCUS FALSE
-        COPY_PLUGIN_AFTER_BUILD TRUE
+        COPY_PLUGIN_AFTER_BUILD FALSE
         PLUGIN_MANUFACTURER_CODE Juce
         PLUGIN_CODE Dem0
         FORMATS AU VST3 Standalone
         PRODUCT_NAME "Audio Plugin Example")
 
 target_sources(${BaseTargetName} PRIVATE
+        Source/Parameters.h
+        Source/PluginProcessor.h
         Source/PluginProcessor.cpp
+        Source/PluginEditor.h
         Source/PluginEditor.cpp)
 
-target_compile_definitions(${BaseTargetName}
-        PUBLIC
+target_compile_definitions(${BaseTargetName} PUBLIC
         JUCE_WEB_BROWSER=0
         JUCE_USE_CURL=0
         JUCE_VST3_CAN_REPLACE_VST2=0)

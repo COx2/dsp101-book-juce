@@ -7,7 +7,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 include (CMake/GitFunctions.cmake)
 
 #calling my custom function to grab JUCE 6 from git:
-update_from_git(juce "https://github.com/juce-framework/juce" master)
+#update_from_git(juce "https://github.com/juce-framework/juce" master)
 
 #Adds all the module sources so they appear correctly in the IDE
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
@@ -23,7 +23,7 @@ add_subdirectory(External/JUCE)
 
 option(BUILD_EXAMPES "Build examples" ON)
 
-if (${BUILD_JUCE_PROTOTYPE_EXAMPES})
+if (${BUILD_EXAMPES})
     #adding any custom modules you might have:
     #add_subdirectory(Modules)
 
